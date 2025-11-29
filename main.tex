@@ -9,32 +9,20 @@
 
 \maketitle
 
-\section{Abstract}
-The abstract should concisely state the problem (accurate thermochemical properties for adsorbates), the methodological approach (comparing harmonic, anharmonic, and hindered motion treatments with ML-accelerated potential energy surfaces), and the key findings. For this audience, emphasize both the methodological contribution and the scientific insights.
-\section{Introduction and Motivation}
-Open with the broader context: why accurate partition functions matter for heterogeneous catalysis and microkinetic modeling. Discuss the well-known limitations of the harmonic oscillator approximation for weakly-bound adsorbates and frustrated translations/rotations. Introduce Campbell's work on hindered translator/rotor treatments as motivation, then position your contribution—applying these corrections systematically using ML potentials (FairChem, MACE) rather than expensive DFT for barrier calculations.
+\input{reports/abstract}
 
-\section{Theoretical Background}
-This section should be thorough but not a textbook review. Cover:
-Statistical Thermodynamics Framework — Establish the partition function formalism and how thermochemical properties (entropy, heat capacity, free energy) derive from it. Define the molecular partition function decomposition relevant to adsorbates.
-Harmonic Oscillator Approximation — Present the standard treatment, its assumptions, and known failure modes for soft/anharmonic modes and hindered motions.
-Anharmonic Corrections — Describe your approach to anharmonic corrections, whether through perturbation theory, numerical integration over the potential energy surface, or quasi-harmonic methods.
-Hindered Rotor and Hindered Translator Models — Present Campbell's treatment explicitly with the relevant equations. Discuss how the barrier heights (V₀) enter the partition function expressions and the physical interpretation of transitioning between free and frozen limits.
-Climbing Image Nudged Elastic Band — Brief theoretical treatment of CI-NEB and why it's appropriate for finding the rotational and translational saddle points that define your barrier heights.
-\section{Computational Methods}
-System Setup — Describe the Pt(111) slab model (layers, vacuum, supercell size, k-point sampling if relevant to your ML potential training).
-Adsorbate Configurations — Detail the binding sites and geometries for CH₃, CH₄, OH, NH₃, CO, and NH₂. Include any geometry optimization protocols.
-Machine Learning Potentials — Describe FairChem and MACE, their training data provenance, and validation against DFT for your specific systems. This is critical for this audience—they'll want to know why you trust these potentials for barrier calculations.
-CI-NEB Calculations — Specify the number of images, spring constants, convergence criteria, and how you identified the appropriate initial and final states for rotational and translational pathways.
-Thermochemical Calculations — Detail your implementation in ASE and PyNTA. Describe how you compute Hessians, extract frequencies, identify the hindered modes, and apply the various thermodynamic corrections.
-\section{Results and Discussion}
-Barrier Heights from CI-NEB — Present the rotational and translational barriers for each adsorbate. Compare across species and rationalize trends (binding strength, molecular symmetry, surface corrugation).
-Comparison of Thermodynamic Treatments — This is the heart of the report. For each adsorbate, present thermochemical properties (S, Cp, G) as functions of temperature under: (i) pure harmonic treatment, (ii) harmonic with anharmonic corrections, (iii) hindered rotor/translator treatment. Quantify the differences and discuss which species show the largest deviations from harmonic behavior.
-Validation — If available, compare against experimental data or high-level calculations. Discuss the accuracy of the ML potentials for these properties.
-Implications for Microkinetic Modeling — Connect your findings to practical catalysis modeling. How much do equilibrium constants or rate constants change when using proper hindered motion treatments versus harmonic approximations?
-\section{Conclusions and Future Work}
-Summarize key findings and their significance. For future work, consider mentioning extension to other surfaces, integration into automated workflow tools, or systematic benchmarking against experimental thermochemistry.
+\input{reports/introduction}
+
+\input{reports/theory}
+
+\input{reports/methods}
+
+\input{reports/results}
+
+\input{reports/conclusion}
+
 \section{References}
-\section{*Appendices}
-Include detailed tables of frequencies, barrier heights, and thermochemical data. Provide code snippets or workflow descriptions for reproducibility if appropriate for the venue.
+
+\input{reports/appendices}
+
 \end{document}

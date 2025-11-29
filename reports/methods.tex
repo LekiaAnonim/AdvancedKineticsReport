@@ -1,0 +1,6 @@
+\section{Computational Methods}
+System Setup — Describe the Pt(111) slab model (layers, vacuum, supercell size, k-point sampling if relevant to your ML potential training).
+Adsorbate Configurations — Detail the binding sites and geometries for $CH_3$, $CH_4$, OH, $NH_3$, CO, and $NH_2$. Include any geometry optimization protocols.
+Machine Learning Potentials — Describe FairChem and MACE, their training data provenance, and validation against DFT for your specific systems. This is critical for this audience—they'll want to know why you trust these potentials for barrier calculations.
+CI-NEB Calculations — Specify the number of images, spring constants, convergence criteria, and how you identified the appropriate initial and final states for rotational and translational pathways.
+Thermochemical Calculations — Detail your implementation in ASE and PyNTA. Describe how you compute Hessians, extract frequencies, identify the hindered modes, and apply the various thermodynamic corrections.
